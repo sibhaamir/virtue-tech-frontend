@@ -17,14 +17,14 @@ export function PanelSidebar({
   const pathname = usePathname()
 
   const handleClick = () => {
-    if (setSidebarOpen) setSidebarOpen(false) // close sidebar on mobile after clicking
+    if (setSidebarOpen) setSidebarOpen(false) // Close sidebar on mobile after clicking
   }
 
   return (
     <aside
       className={cn(
-        // 👇 Added top offset (e.g., 3rem or 48px) to push below top navbar
-        "fixed md:static top-12 md:top-0 left-0 h-[calc(100%-3rem)] md:h-auto w-64 bg-sidebar border-r transition-transform duration-300 z-40 md:z-auto",
+        // ✅ Sidebar now pushed below BOTH top navbars (~6rem = 96px)
+        "fixed md:static top-[6rem] md:top-0 left-0 h-[calc(100%-6rem)] md:h-auto w-64 bg-sidebar border-r transition-transform duration-300 z-40 md:z-auto",
         sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       )}
     >
@@ -40,7 +40,7 @@ export function PanelSidebar({
               href={it.href}
               onClick={handleClick}
               className={cn(
-                "px-3 py-2 rounded-md text-sm hover:bg-sidebar-accent",
+                "px-3 py-2 rounded-md text-sm hover:bg-sidebar-accent transition-colors",
                 active && "bg-sidebar-primary text-sidebar-primary-foreground"
               )}
             >
