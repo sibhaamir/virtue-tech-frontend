@@ -10,9 +10,9 @@ import { Suspense } from "react"
 import { ChatWidget } from "@/components/chat/chat-widget"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "virtue-tech",
+  description: "Created by Sibha",
+ 
 }
 
 export default function RootLayout({
