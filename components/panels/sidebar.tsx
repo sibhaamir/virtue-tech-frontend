@@ -1,9 +1,10 @@
 "use client"
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { Menu } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function PanelSidebar({
   title,
@@ -17,30 +18,29 @@ export function PanelSidebar({
 
   return (
     <>
-      {/* 🔹 Mobile top bar with hamburger button */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 border-b bg-sidebar">
+      {/* 🔹 Mobile top bar */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3 border-b bg-gray-100">
         <div className="font-semibold">{title}</div>
         <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="p-2 rounded-md hover:bg-sidebar-accent"
+          onClick={() => setSidebarOpen(true)}
+          className="p-2 rounded-md hover:bg-gray-200"
         >
           <Menu className="w-5 h-5" />
         </button>
       </div>
 
-      {/* 🔹 Sidebar */}
+      {/* 🔹 Sidebar (works for both desktop + mobile) */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-64 border-r bg-sidebar transition-transform duration-300 md:translate-x-0 md:static md:block",
+          "fixed top-0 left-0 z-50 h-full w-64 border-r bg-white shadow-md transform transition-transform duration-300 md:translate-x-0 md:static md:block",
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
         <div className="px-4 py-4 border-b flex items-center justify-between">
           <div className="font-semibold">{title}</div>
-          {/* Close button for mobile */}
           <button
             onClick={() => setSidebarOpen(false)}
-            className="md:hidden p-2 rounded-md hover:bg-sidebar-accent"
+            className="md:hidden p-2 rounded-md hover:bg-gray-200"
           >
             ✕
           </button>
@@ -53,11 +53,10 @@ export function PanelSidebar({
               <Link
                 key={it.href}
                 href={it.href}
-                onClick={() => setSidebarOpen(false)} // 👈 auto-close on click
+                onClick={() => setSidebarOpen(false)} // closes sidebar on click (mobile)
                 className={cn(
-                  "px-3 py-2 rounded-md text-sm hover:bg-sidebar-accent",
-                  active &&
-                    "bg-sidebar-primary text-sidebar-primary-foreground"
+                  "px-3 py-2 rounded-md text-sm hover:bg-gray-100 transition-colors",
+                  active && "bg-blue-600 text-white"
                 )}
               >
                 {it.label}
@@ -67,7 +66,7 @@ export function PanelSidebar({
         </nav>
       </aside>
 
-      {/* 🔹 Backdrop overlay for mobile */}
+      {/* 🔹 Backdrop overlay */}
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
