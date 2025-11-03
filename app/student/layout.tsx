@@ -21,9 +21,9 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
     { href: "/student/settings", label: "Settings" },
   ]
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 flex gap-6">
+    <div className="flex min-h-screen">
       <PanelSidebar title="Student" items={items} />
-      <div className="flex-1 min-w-0">{children}</div>
+       <main className="flex-1 overflow-y-auto p-4">{children}</main>
     </div>
   )
 }

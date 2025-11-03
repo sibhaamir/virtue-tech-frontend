@@ -18,21 +18,21 @@ export function PanelSidebar({
 
   return (
     <>
-      {/* 🔹 Mobile top bar */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 border-b bg-gray-100">
-        <div className="font-semibold">{title}</div>
+      {/* 🔹 Top bar for mobile */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3 border-b bg-white shadow-sm">
+        <div className="font-semibold text-lg">{title}</div>
         <button
           onClick={() => setSidebarOpen(true)}
-          className="p-2 rounded-md hover:bg-gray-200"
+          className="p-2 rounded-md hover:bg-gray-100"
         >
           <Menu className="w-5 h-5" />
         </button>
       </div>
 
-      {/* 🔹 Sidebar (works for both desktop + mobile) */}
+      {/* 🔹 Sidebar (responsive) */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-64 border-r bg-white shadow-md transform transition-transform duration-300 md:translate-x-0 md:static md:block",
+          "fixed top-0 left-0 z-50 h-full w-64 border-r bg-white transition-transform duration-300 md:translate-x-0 md:static md:block",
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -40,7 +40,7 @@ export function PanelSidebar({
           <div className="font-semibold">{title}</div>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-200"
+            className="md:hidden p-2 rounded-md hover:bg-gray-100"
           >
             ✕
           </button>
@@ -53,7 +53,7 @@ export function PanelSidebar({
               <Link
                 key={it.href}
                 href={it.href}
-                onClick={() => setSidebarOpen(false)} // closes sidebar on click (mobile)
+                onClick={() => setSidebarOpen(false)} // close sidebar on click
                 className={cn(
                   "px-3 py-2 rounded-md text-sm hover:bg-gray-100 transition-colors",
                   active && "bg-blue-600 text-white"
@@ -66,7 +66,7 @@ export function PanelSidebar({
         </nav>
       </aside>
 
-      {/* 🔹 Backdrop overlay */}
+      {/* 🔹 Overlay for mobile */}
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
