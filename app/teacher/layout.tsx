@@ -29,19 +29,15 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="flex justify-between items-center bg-white border-b px-4 py-3 fixed w-full z-50">
-        <div className="font-bold text-lg">Virtue Tech</div>
-        <button className="md:hidden p-2 rounded hover:bg-gray-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
-          <Menu className="h-6 w-6" />
-        </button>
-      </header>
+     
+     
 
-      <div className="flex justify-between items-center bg-gray-50 border-b px-4 py-2 mt-14 md:mt-0">
+      <header className="flex justify-between items-center bg-gray-50 border-b px-4 py-2 mt-14 md:mt-0">
         <h2 className="font-semibold text-gray-800">Teacher</h2>
         <button className="md:hidden p-2 rounded hover:bg-gray-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
           <Menu className="h-5 w-5" />
         </button>
-      </div>
+      </header>
 
       <div className="flex flex-1">
         <PanelSidebar title="Teacher" items={items} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
