@@ -7,7 +7,7 @@ export function SiteFooter() {
             <span className="text-primary">Virtue</span> Tech
           </div>
           <p className="text-sm text-muted-foreground">
-            An integrated learning platform for students, tutors, parents, admins, and institutions.
+            An integrated learning platform for students, tutors, parents, and admins.
           </p>
         </div>
         <div>
@@ -51,11 +51,6 @@ export function SiteFooter() {
             <li>
               <a href="/parent" className="hover:text-primary">
                 Parent
-              </a>
-            </li>
-            <li>
-              <a href="/institution" className="hover:text-primary">
-                Institution
               </a>
             </li>
             <li>

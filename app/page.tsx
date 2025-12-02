@@ -38,8 +38,7 @@ export default function HomePage() {
           {/* Second row */}
           <div className="grid gap-4 md:grid-cols-3">
             {[
-              { t: "Parent Dashboard", d: "Track your child’s learning progress and attendance", img: "/parent-dashboard.jpg" },
-              { t: "Institution Portal", d: "Manage tutors, courses, and student enrollments", img: "/institution-portal.jpg" },
+              { t: "Parent Dashboard", d: "Track your child's learning progress and attendance", img: "/parent-dashboard.jpg" },
               { t: "AI Chatbot Assistant", d: "Smart virtual assistant for instant help", img: "/ai-chatbot.jpg" },
             ].map((f, i) => (
               <div
@@ -71,32 +70,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Pricing Section */}
-      <Section title="Pricing" subtitle="Choose a plan that fits your journey">
-        <div className="grid gap-4 md:grid-cols-3">
-          {[
-            { name: "Starter", price: "$0", desc: "Get started with the basics" },
-            { name: "Pro", price: "$19", desc: "Serious learning tools for active learners" },
-            { name: "Institute", price: "Contact", desc: "For schools & academies" },
-          ].map((p, i) => (
-            <div
-              key={i}
-              className="rounded-xl border p-6 hover:shadow-lg hover:border-emerald-500 transition-all duration-300"
-            >
-              <div className="font-semibold text-lg">{p.name}</div>
-              <div className="mt-1 text-3xl font-bold text-emerald-700">{p.price}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-              <a
-                href="/signup"
-                className="mt-4 inline-block px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-colors"
-              >
-                Choose
-              </a>
-            </div>
-          ))}
-        </div>
-      </Section>
-
+     
       {/* Get Started Section */}
       <Section title="Get Started">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3">
@@ -113,13 +87,7 @@ export default function HomePage() {
             I am a Tutor
           </a>
           <a
-            href="/institution"
-            className="px-4 py-2 rounded-md border border-emerald-600 text-emerald-700 hover:bg-emerald-50 transition-colors"
-          >
-            I am an Institution
-          </a>
-          <a
-            href="/parent"
+            href="/signup?role=parent"
             className="px-4 py-2 rounded-md border border-emerald-600 text-emerald-700 hover:bg-emerald-50 transition-colors"
           >
             I am a Parent

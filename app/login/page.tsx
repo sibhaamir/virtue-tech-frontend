@@ -17,17 +17,18 @@ export default function LoginPage() {
               Back to website →
             </Link>
           </div>
+
           <div className="flex flex-col items-center justify-center flex-grow text-center">
             <Image
-              src="/login-side.png" // Add your logo or banner image in /public folder
+              src="/virtue logo.jpg"
               alt="Virtue Tech"
-              width={200}
-              height={200}
+              width={300}
+              height={300}
               className="rounded-lg mb-6"
             />
             <p className="text-lg font-medium">Empowering Education, Virtually</p>
             <p className="text-sm text-gray-200 mt-2">
-              Connecting students, tutors, and institutions worldwide.
+              Connecting students, tutors, and parents worldwide.
             </p>
           </div>
         </div>
@@ -60,6 +61,13 @@ export default function LoginPage() {
               />
             </div>
 
+            {/* Forgot Password Link */}
+            <div className="flex justify-end">
+              <Link href="/forgot" className="text-sm text-[#167F62] hover:text-[#0F4C3A] underline">
+                Forgot Password?
+              </Link>
+            </div>
+
             <button
               type="submit"
               className="mt-2 w-full bg-[#167F62] text-white py-2 rounded-md hover:bg-[#0F4C3A] transition"
@@ -74,23 +82,8 @@ export default function LoginPage() {
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
 
-          {/* Social Login Buttons */}
-          <div className="flex flex-col gap-3">
-            <button
-              type="button"
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded-md border hover:bg-gray-100 transition"
-            >
-              <FcGoogle className="text-xl" />
-              <span>Continue with Google</span>
-            </button>
-            <button
-              type="button"
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded-md border hover:bg-gray-100 transition"
-            >
-              <MdEmail className="text-xl text-[#167F62]" />
-              <span>Continue with Email</span>
-            </button>
-          </div>
+         
+         
 
           <p className="text-sm text-gray-600 text-center mt-6">
             No account?{" "}

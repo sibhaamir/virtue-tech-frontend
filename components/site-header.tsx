@@ -28,9 +28,6 @@ export function SiteHeader() {
           <Link href="/teacher" className="hover:text-primary">
             Teacher
           </Link>
-          <Link href="/institution" className="hover:text-primary">
-            Institution
-          </Link>
           <Link href="/admin" className="hover:text-primary">
             Admin
           </Link>
@@ -73,9 +70,6 @@ export function SiteHeader() {
             </Link>
             <Link href="/teacher" onClick={() => setOpen(false)}>
               Teacher
-            </Link>
-            <Link href="/institution" onClick={() => setOpen(false)}>
-              Institution
             </Link>
             <Link href="/admin" onClick={() => setOpen(false)}>
               Admin
